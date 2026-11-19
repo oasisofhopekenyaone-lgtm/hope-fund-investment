@@ -1,2 +1,2 @@
 # hope-fund-investment
-Member deposit and
+Member deposit and group funding 
