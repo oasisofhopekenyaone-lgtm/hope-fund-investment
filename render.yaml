@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: hope-fund-investment
+    runtime: node
+    plan: starter
+    region: frankfurt
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    disk:
+      name: hope-fund-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_PATH
+        value: /var/data/hope-fund.sqlite
+      - key: ADMIN_PASSWORD
+        generateValue: true
